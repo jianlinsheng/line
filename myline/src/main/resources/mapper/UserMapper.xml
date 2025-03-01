@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jianlinsheng.myline.mapper.UserMapper">
+
+
+    <select id="is_exist" resultType="com.jianlinsheng.myline.pojo.User">
+
+        select *
+        from line.user
+        where username = #{username}
+
+
+    </select>
+    <select id="getById" resultType="com.jianlinsheng.myline.pojo.User">
+        select * from line.user where id = #{id}
+    </select>
+    <select id="getUsername" resultType="java.lang.String">
+        select username from line.user where id = #{id}
+    </select>
+</mapper>
